@@ -53,7 +53,7 @@ proc post*(db: DBase, msg: Message) =
     raise newException(ValueError, "Message has to be less than 140 characters")
 
   db.db.exec(sql"""
-    Insert Into Messages Values(?, ?, ?)
+    Insert Into Message Values(?, ?, ?)
   """, msg.user, $msg.time.toUnix(), msg.msg)
 
 proc follow*(db: DBase, follower, user: User) =
@@ -101,7 +101,7 @@ proc findMessages*(db: DBase, users: seq[string], limit = 10): seq[Message] =
     Where
   """ & whereClause & """
     Order By time Desc
-    Limit""" & $limit), users)
+    Limit """ & $limit), users)
   for row in msgz:
     result.add(Message(
       user: row[0],
