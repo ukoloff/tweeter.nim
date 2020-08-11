@@ -7,6 +7,7 @@ license       = "MIT"
 srcDir        = "src"
 
 bin           = @["tweeter"]
+binDir        = "bin"
 skipExt       = @["nim"]
 
 # Dependencies
