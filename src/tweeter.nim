@@ -2,8 +2,10 @@ import asyncdispatch
 
 import jester
 
+import db, view/[user, general]
+
 routes:
   get "/":
-    resp "Hello, world!"
+    resp renderMain(renderLogin())
 
 runForever()
