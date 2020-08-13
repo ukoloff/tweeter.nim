@@ -30,4 +30,12 @@ routes:
     dbh.post(message)
     redirect("/")
 
+  get "/@name":
+    cond '.' notin @"name"
+    var user: User
+    if not dbh.findUser(@"name", user):
+      halt "User not found"
+    let messages = dbh.findMessages(@[user.name])
+    resp renderMain(renderUser(user) & renderMessages(messages))
+
 runForever()
