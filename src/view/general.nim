@@ -36,11 +36,14 @@
 # result = ""
 <div id="user">
   <h1>${$!username}'s timeline</h1>
+  <form action="logoff" method="post">
+    <input type="submit" value="Log out" disabled>
+  </form>
 </div>
 <div id="newMessage">
   <span>New message</span>
   <form action="createMessage" method="post">
-    <input type="text" name="message">
+    <input type="text" name="message" required>
     <input type="hidden" name="username" value="${$!username}">
     <input type="submit" value="Tweet">
   </form>
