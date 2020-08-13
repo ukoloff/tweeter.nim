@@ -31,7 +31,7 @@
 <div id="messages">
 #for message in messages:
   <div>
-    <a href="/${message.user}">${message.user}</a>
+    <a href="/@${message.user}">${message.user}</a>
     <span>${message.time.getGMTime().format("HH:mm MMMM d',' yyyy")}</span>
     <h3>${message.msg}</h3>
   </div>

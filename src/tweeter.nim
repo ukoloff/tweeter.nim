@@ -46,8 +46,7 @@ routes:
     dbh.follow(follower, target)
     redirect(uri("/" & @"target"))
 
-  get "/@name":
-    cond '.' notin @"name"
+  get "/\\@@name":
     var user: User
     if not dbh.findUser(@"name", user):
       halt "User not found"
