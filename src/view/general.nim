@@ -35,7 +35,7 @@
 #proc renderTimeline*(username: string, messages: seq[Message]): string =
 # result = ""
 <div id="user">
-  <h1>${$!username}{"'"}s timeline</h1>
+  <h1>${$!username}'s timeline</h1>
 </div>
 <div id="newMessage">
   <span>New message</span>

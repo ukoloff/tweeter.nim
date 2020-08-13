@@ -14,9 +14,12 @@ type
   DBase* = ref object
     db: DbConn
 
+proc setup*(db: DBase)
+
 proc newDB*(filename = "tweeter.db"): DBase =
   new result
   result.db = open("db/" & filename, "", "", "")
+  result.setup()
 
 proc close*(db: DBase) =
   db.db.close()
