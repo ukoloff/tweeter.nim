@@ -14,3 +14,4 @@ skipExt       = @["nim"]
 
 requires "nim >= 1.2.6"
 requires "jester >= 0.4"
+requires "karax >= 1.0.0"
